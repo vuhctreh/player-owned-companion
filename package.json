@@ -1,0 +1,11 @@
+{
+  "name": "player-owned-companion",
+  "version": "1.0.0",
+  "description": "discord toolset for RS3 time-based activities",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "FR4 and Portfoliio",
+  "license": "ISC"
+}
