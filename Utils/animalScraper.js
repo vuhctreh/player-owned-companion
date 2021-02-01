@@ -39,7 +39,7 @@ const getAnimalInfo = async (query) => {
     let childListTime = $($($(selector).get(9)).children());
     let timeArray = [];
 
-    for (i = 1; i < childListTime.length; i++) {
+    for (i = 0; i < childListTime.length; i++) {
       timeArray.push($($(childListTime).get(i)).html());
     }
 
@@ -50,7 +50,7 @@ const getAnimalInfo = async (query) => {
     let childListXP = $($($(selector).get(12)).children());
     let XPArray = [];
 
-    for (i = 1; i < childListXP.length; i++) {
+    for (i = 0; i < childListXP.length; i++) {
       XPArray.push($($(childListXP).get(i)).html());
     }
 
@@ -61,7 +61,7 @@ const getAnimalInfo = async (query) => {
     let childListSellPrice = $($($(selector).get(18)).children());
     let priceArray = [];
 
-    for (i = 1; i < childListSellPrice.length; i++) {
+    for (i = 0; i < childListSellPrice.length; i++) {
       priceArray.push($($(childListSellPrice).get(i)).html());
     }
 
@@ -85,20 +85,23 @@ const getAnimalInfo = async (query) => {
       breedingCycle: $($($(selector).get(5)).children().get(1)).html(),
       breedingSuccessChance: $($($(selector).get(6)).children().get(1)).html(),
       growthTime: {
-        Adolescent: timeArray[0],
-        Adult: timeArray[1],
-        Elder: timeArray[2],
+        Child: timeArray[0],
+        Adolescent: timeArray[1],
+        Adult: timeArray[2],
+        Elder: timeArray[3],
       },
       growthXP: {
-        Adolescent: XPArray[0],
-        Adult: XPArray[1],
-        Elder: XPArray[2],
+        Child: XPArray[0],
+        Adolescent: XPArray[1],
+        Adult: XPArray[2],
+        Elder: XPArray[3],
       },
       baseSellPrice: {
-        Child: priceArray[0],
-        Adolescent: priceArray[1],
-        Adult: priceArray[2],
-        Elder: priceArray[3],
+        Egg: priceArray[0],
+        Child: priceArray[1],
+        Adolescent: priceArray[2],
+        Adult: priceArray[3],
+        Elder: priceArray[4],
       },
       buyer: {
         name: buyerName,

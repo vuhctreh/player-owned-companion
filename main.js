@@ -20,7 +20,7 @@ client.on("message", async (message) => {
 
   let username = message.author;
   console.log(message.author.avatarURL);
-  message.channel.send(embed.generateEmbed(username));
+  message.channel.send(embed.generateEmbed(username, response, query));
 });
 
 client.login(process.env.DISCORD_TOKEN);
