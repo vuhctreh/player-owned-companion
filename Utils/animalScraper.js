@@ -127,7 +127,7 @@ const getAnimalInfo = async (query) => {
 
     return animalInfo;
   } catch (e) {
-    console.log(e);
+    return null;
   }
 };
 

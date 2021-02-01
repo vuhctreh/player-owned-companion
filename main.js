@@ -19,8 +19,12 @@ client.on("message", async (message) => {
   const response = await scraper.getAnimalInfo(query);
 
   let username = message.author;
-  console.log(message.author.avatarURL);
-  message.channel.send(embed.generateEmbed(username, response, query));
+
+  if (response != null) {
+    message.channel.send(embed.generateEmbed(username, response, query));
+  } else {
+    message.channel.send("Page not found");
+  }
 });
 
 client.login(process.env.DISCORD_TOKEN);
