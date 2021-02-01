@@ -16,8 +16,14 @@ client.on("message", async (message) => {
   const query = message.content.slice(prefix.length).toLowerCase();
 
   const response = await scraper.getAnimalInfo(query);
-
-  message.channel.send("bruh");
+  /**
+  message.channel.send(
+    `Level for ${query}: ${response.farmingLevel} 
+    Pen size: ${response.penSize} 
+    Food: ${response.food} 
+    Breeding Cycle: ${response.breedingCycle} 
+    Success Chance: ${response.breedingSuccessChance}`
+  ); */
 });
 
 client.login(process.env.DISCORD_TOKEN);
