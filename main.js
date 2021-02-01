@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 const scraper = require("./Utils/animalScraper");
+const embed = require("./Utils/embed")
 require("dotenv").config();
 
 const client = new discord.Client();
@@ -17,7 +18,10 @@ client.on("message", async (message) => {
 
   const response = await scraper.getAnimalInfo(query);
 
-  message.channel.send("bruh");
+  let username = message.author;
+  console.log(message.author.avatarURL);
+  message.channel.send(embed.generateEmbed(username));
+
 });
 
 client.login(process.env.DISCORD_TOKEN);
