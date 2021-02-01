@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 const scraper = require("./Utils/animalScraper");
+const embed = require("./Utils/embed");
 require("dotenv").config();
 
 const client = new discord.Client();
@@ -16,14 +17,10 @@ client.on("message", async (message) => {
   const query = message.content.slice(prefix.length).toLowerCase();
 
   const response = await scraper.getAnimalInfo(query);
-  /**
-  message.channel.send(
-    `Level for ${query}: ${response.farmingLevel} 
-    Pen size: ${response.penSize} 
-    Food: ${response.food} 
-    Breeding Cycle: ${response.breedingCycle} 
-    Success Chance: ${response.breedingSuccessChance}`
-  ); */
+
+  let username = message.author;
+  console.log(message.author.avatarURL);
+  message.channel.send(embed.generateEmbed(username));
 });
 
 client.login(process.env.DISCORD_TOKEN);
